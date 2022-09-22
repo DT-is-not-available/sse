@@ -1,15 +1,28 @@
-body {
+body, coll {
 	margin: 20px;
 	text-align: center;
 	font-family: sans-serif;
 	color: #ffffff;
 	background: #333333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
 }
-code {
+row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+pre {
 	font-family: monospace;
 	background: #444;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 10px;
+	margin: 20px;
+	width: fit-content;
+	text-align: left;
+	user-select: all;
 }
 textarea {
 	font-family: monospace;

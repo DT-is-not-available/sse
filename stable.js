@@ -1,6 +1,6 @@
 function SSE() {
-	let cmds = this.cmds
-	let vars = this.vars
+	let cmds = SSE.cmds
+	let vars = {}
 	function run(string, index=0) {
 		let lines = string.split(/\r?\n/gm)
 		for (let i = index; i < lines.length; i++) {
@@ -27,7 +27,7 @@ function SSE() {
 	}
 	return {
 		run: run,
-		cmds: cmds,
 		vars: vars,
 	}
 }
+SSE.cmds = {}

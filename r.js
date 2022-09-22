@@ -1,3 +1,4 @@
+// nodejs script to create a new release file
 const fs = require("fs")
 let latest = fs.readFileSync("latest.js")
 let patch = 0

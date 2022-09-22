@@ -11,12 +11,16 @@
 	<body>
 		<h1>Simplescript Engine</h1>
 		<p>It's as simple as adding</p><pre>&lt;script src="dt-is-not-available.github.io/sse/stable.js">&lt;/script></pre><p>to your page</p>
-		<script src="stable.js"></script>
+		<script src="latest.js"></script>
 		<row>
 			<coll>
 				<h1>Javascript</h1>
 				<h3>Add new commands</h3>
 				<pre>SSE.cmds.test = function(arg1, arg2){}</pre>
+				<h3>Add new keywords</h3>
+				<pre>SSE.keywords.test = function(arg1, arg2){}</pre>
+				<h3>Add per-line evaluation</h3>
+				<pre>SSE["*"] = function(line){}</pre>
 				<h3>Create new script instance</h3>
 				<pre>let script = SSE()</pre>
 				<h3>Set script variables</h3>
@@ -28,6 +32,8 @@
 				<h1>Simplescript</h1>
 				<h3>Run a command</h3>
 				<pre>test "arg1", "arg2"</pre>
+				<h3>Run a keyword</h3>
+				<pre>test arg1 arg2</pre>
 				<h3>Reference a variable</h3>
 				<pre>test %varname%</pre>
 				<h3>Acceptable types</h3>

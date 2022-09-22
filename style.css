@@ -1,20 +1,32 @@
 :root {
-	color-scheme: dark;
+	--accent: #5533ff;
+	--altbg: #a061ff;
+	--alt: #7b57ff;
+	--bg: #fff;
+	--text:  #333333;
 }
 body, coll {
-	margin: 20px;
+	margin: 0px;
 	text-align: center;
 	font-family: sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
-	user-select: none;
 }
 body {
-	overflow-y: scroll;
-	background: #333333;
-	color: #ffffff;
+	overflow: overlay;
+	background: var(--bg);
+	color: var(--text);
+}
+body {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+div.fit {
 	max-width: 1000px;
 }
 html {
@@ -28,13 +40,23 @@ row {
 }
 pre {
 	font-family: monospace;
-	background: #444;
+	background: var(--bg);
+	color: var(--accent);
 	padding: 10px;
 	border-radius: 10px;
 	margin: 20px;
 	width: fit-content;
 	text-align: left;
 	user-select: all;
+	border: 1px solid var(--accent);
+	cursor: text;
+}
+button, pre {
+	transition: transform 0.2s, filter 0.2s;
+}
+pre:hover, button:hover {
+	transform: translateY(-3px);
+	filter: drop-shadow(0px 3px 5px #0005);
 }
 textarea {
 	font-family: monospace;
@@ -45,18 +67,79 @@ textarea {
 h0 {
 	font-size: 4em;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
+h1, h2, h3, h4, h5, h6, h0 {
+	font-weight: bold;
 }
 big {
 	font-size: 1.5em;
 }
-summary {
-	cursor: pointer;
-}
-details {
-	background: #222;
+div.bg {
+	background: var(--accent);
+	color: var(--bg);
 	padding: 5px;
 	border-radius: 10px;
-	margin-bottom: 10px;
+	margin: 10px;
+}
+div.c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 20px);
+    width: calc(100% - 20px);
+    background: linear-gradient(0deg, var(--accent), var(--altbg));
+    color: var(--bg);
+    margin: 10px;
+    border-radius: 10px;
+	position: relative;
+}
+::selection {
+	background: var(--accent);
+	color: var(--bg); 
+}
+div.bgc h0::selection, div.bgc h1::selection, div.bgc h2::selection, div.bgc h3::selection, div.bgc p::selection {
+	background: var(--bg); 
+	color: var(--accent); 
+}
+.arrow-down {
+    border: solid white;
+    border-width: 0 5px 5px 0;
+	border-radius: 5px;
+    display: inline-block;
+    padding: 3px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 30px;
+	transform: rotate(45deg);
+	animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+    0%   { transform: translate(0,  0px) rotate(45deg); }
+    50%  { transform: translate(0, 10px) rotate(45deg); }
+    100% { transform: translate(0, -0px) rotate(45deg); }   
+}
+button {
+	user-select: none;
+	border-radius: 10px;
+	padding: 10px 40px;
+	min-width: 200px;
+	font-size: 20px;
+	font-weight: bold;
+    background: linear-gradient(0deg, var(--accent), var(--alt));
+    color: var(--bg);
+	cursor: pointer;
+	border: 1px solid white;
+	margin: 5px;
+}
+button.alt {
+	background: var(--bg);
+	color: var(--accent);
+	border: 1px solid var(--accent);
+}
+button:disabled {
+	filter: none;
+	transform: none;
+	opacity: 0.5;
+	cursor: not-allowed;
 }

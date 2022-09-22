@@ -9,37 +9,44 @@
 	</head>
 	
 	<body>
-		<h1>Simplescript Engine</h1>
-		<p>It's as simple as adding</p><pre>&lt;script src="dt-is-not-available.github.io/sse/stable.js">&lt;/script></pre><p>to your page</p>
+		<h0>Simplescript Engine</h0>
+		<p>It's as simple as this:</p><pre>&lt;script src="dt-is-not-available.github.io/sse/stable.js">&lt;/script></pre>
 		<script src="latest.js"></script>
-		<row>
-			<coll>
-				<h1>Javascript</h1>
-				<h3>Add new commands</h3>
-				<pre>SSE.cmds.test = function(arg1, arg2){}</pre>
-				<h3>Add new keywords</h3>
-				<pre>SSE.keywords.test = function(arg1, arg2){}</pre>
-				<h3>Add per-line evaluation</h3>
-				<pre>SSE["*"] = function(line){}</pre>
-				<h3>Create new script instance</h3>
-				<pre>let script = SSE()</pre>
-				<h3>Set script variables</h3>
-				<pre>script.vars.xyz = 123</pre>
-				<h3>Run a script <c style="font-size: 12px;">(<code>lineIndex</code> is optional)</c></h3>
-				<pre>script.run("script string", ?lineIndex)</pre>
-			</coll>
-			<coll>
-				<h1>Simplescript</h1>
-				<h3>Run a command</h3>
-				<pre>test "arg1", "arg2"</pre>
-				<h3>Run a keyword</h3>
-				<pre>test arg1 arg2</pre>
-				<h3>Reference a variable</h3>
-				<pre>test %varname%</pre>
-				<h3>Acceptable types</h3>
-				<p>The script will accept any valid JSON type as an argument</p>
-			</coll>
-		</row>
+		<details>
+			<summary><big>What is this?</big></summary>
+			<p>This is a simple and lightweight library that creates a safe and extremely simple scripting language. You create the commands and keywords and Simplescript does the rest.</p>
+		</details>
+		<details>
+			<summary><big>Basic use</big></summary>
+			<row>
+				<coll>
+					<h1>Javascript</h1>
+					<h3>Add new commands</h3>
+					<pre>SSE.cmds.test = function(arg1, arg2){}</pre>
+					<h3>Add new keywords</h3>
+					<pre>SSE.keywords.test = function(arg1, arg2){}</pre>
+					<h3>Add per-line evaluation</h3>
+					<pre>SSE["*"] = function(line){}</pre>
+					<h3>Create new script instance</h3>
+					<pre>let script = SSE()</pre>
+					<h3>Set script variables</h3>
+					<pre>script.vars.xyz = 123</pre>
+					<h3>Run a script <c style="font-size: 12px;">(<code>lineIndex</code> is optional)</c></h3>
+					<pre>script.run("script string", ?lineIndex)</pre>
+				</coll>
+				<coll>
+					<h1>Simplescript</h1>
+					<h3>Run a command</h3>
+					<pre>test "arg1", "arg2"</pre>
+					<h3>Run a keyword</h3>
+					<pre>test arg1 arg2</pre>
+					<h3>Reference a variable</h3>
+					<pre>test %varname%</pre>
+					<h3>Acceptable types</h3>
+					<p>The script will accept any valid JSON type as an argument</p>
+				</coll>
+			</row>
+		</details>
 	</body>
 
 </html>

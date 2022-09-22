@@ -1,0 +1,21 @@
+<style>
+#rick {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+</style>
+<video autoplay loop id="rick">
+	<source src="rick.mp4" type="video/mp4">
+</video>
+<script>
+	let therickisreal = e=>{
+		let vid = document.getElementById("rick")
+		vid.play()
+		document.body.requestFullscreen()
+	}
+	document.onkeydown = therickisreal
+	document.onclick = therickisreal
+</script>

@@ -8,7 +8,7 @@
 body, coll {
 	margin: 0px;
 	text-align: center;
-	font-family: sans-serif;
+	font-family: system-ui;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -120,6 +120,7 @@ div.bgc h0::selection, div.bgc h1::selection, div.bgc h2::selection, div.bgc h3:
     100% { transform: translate(0, -0px) rotate(45deg); }   
 }
 button {
+	font-family: system-ui;
 	user-select: none;
 	border-radius: 10px;
 	padding: 10px 40px;
@@ -142,4 +143,14 @@ button:disabled {
 	transform: none;
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+a {
+	color: currentColor;
+}
+div.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }

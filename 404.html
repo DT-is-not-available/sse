@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>oops</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+		<div class="center">
+			<h0>404</h0>
+			<div class="fit">
+				<p id="errtxt"></p>
+				<coll>
+					<button onclick="window.location = '/'">Go home</button>
+				</coll>
+			</div>
+		</div>
+		<script>
+			let errtxt = document.getElementById("errtxt")
+			let errorTexts = [
+				"Whatever you were trying to find, it's not here.",
+				"These are not the words you are looking for.",
+				`${window.location.pathname} doesn't exist, it can't hurt you.`,
+				"this is honestly",
+				"If you can't see it, it doesn't exist.",
+				`Did you mean <a href="redirect.html?${window.location.pathname}">${window.location.pathname}</a>?`
+			]
+			errtxt.innerHTML = errorTexts[Math.floor(Math.random()*errorTexts.length)]
+		</script>
+	</body>
+
+</html>

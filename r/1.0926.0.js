@@ -1,3 +1,4 @@
+// 1.0926.0
 function SSE() {
 	let cmds = SSE.cmds
 	let keywords = SSE.keywords

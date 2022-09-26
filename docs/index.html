@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Docs | Simplescript</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+		<row style="height: 100%;">
+			<div id="sidebar">
+				<span onclick="window.location = '/'">Home</span>
+				<span class="page">Getting Started</span>
+				<details>
+					<summary>Javascript</summary>
+					<span class="page">SSE.cmds</span>
+					<span class="page">SSE.keywords</span>
+				</details>
+			</div>
+			<div class="content"></div>
+		</row>
+		<script>
+			let content = document.getElementsByClassName("content")[0]
+			let lastbtn = document.getElementsByClassName("page")[0]
+			let btns = {}
+			let elems = [...document.getElementsByClassName("page")]
+			elems.forEach(e=>{
+				btns[e.innerText] = e
+				e.onclick = ()=>{
+					window.location.hash = e.innerText
+					setContent(e.innerText)
+				}
+			})
+			setContent(window.location.hash != '' ? decodeURI(window.location.hash.replace("#","")) : "Getting Started")
+			function setContent(newelem) {
+				fetch(window.location.hash != '' ? "raw/"+window.location.hash.replace("#","")+".html" : "raw/Getting Started.html")
+				.then(res=>res.text())
+				.then(text=>{
+					content.innerHTML = text
+					lastbtn.classList.remove("selected")
+					btns[newelem].classList.add("selected")
+					lastbtn = btns[newelem]
+				})
+			}
+		</script>
+	</body>
+
+</html>

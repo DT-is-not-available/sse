@@ -13,5 +13,5 @@ fs.writeFileSync(
 )
 fs.writeFileSync(
 	"archive.md",
-	`${ver}\n\`\`\`html\n<script src="sse.js.org/r/${ver}.js"></script>\n\`\`\`\n`+fs.readFileSync("archive.md").toString()
+	`${ver}\n\`\`\`html\n<script src="https://sse.js.org/r/${ver}.js"></script>\n\`\`\`\n`+fs.readFileSync("archive.md").toString()
 )

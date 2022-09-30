@@ -1,3 +1,7 @@
+1.0930.2
+```html
+<script src="https://sse.js.org/r/1.0930.2.js"></script>
+```
 1.0930.1
 ```html
 <script src="https://sse.js.org/r/1.0930.1.js"></script>
